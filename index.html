@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Season 9 - Authentic Punjabi & Multi-Cuisine Restaurant, Ahmedabad</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Savor the rich heritage of authentic Punjabi main courses, rich Dal Fry, Veg Biryani, and multi-cuisine delicacies at Season 9, Naranpura, Ahmedabad. Order online for takeaway & delivery.">
+  <meta name="keywords" content="Season 9, Punjabi Restaurant Naranpura, Restaurant Ahmedabad, Punjabi food Ahmedabad, Dal Fry, Jain Food Ahmedabad, Order Punjabi food online">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-utensils"></i>
+        <span>Season 9</span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <!-- Call Button -->
+        <a href="tel:08866108989" class="btn btn-phone" aria-label="Call to order">
+          <i class="fa-solid fa-phone"></i>
+          <span class="btn-text">Call 088661 08989</span>
+        </a>
+        <!-- Cart Badge -->
+        <div class="cart-badge-container" id="cartToggle" aria-label="View Cart">
+          <div class="cart-icon-wrapper">
+            <i class="fa-solid fa-shopping-basket"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
+        </div>
+        <!-- Menu Toggle (Mobile) -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-tagline">Authentic Punjabi Cuisine</span>
+        <h1 class="hero-title">Choose from our Collection of tasty meals</h1>
+        <p class="hero-subtitle">
+          Experience the true flavors of traditional Punjabi food, prepared with premium hand-ground spices and fresh ingredients. Proudly serving Jain variations, popular Dal Fry, and global favorites.
+        </p>
+
+        <!-- Dynamic Live Status Header -->
+        <div class="live-status" id="liveStatus">
+          <span class="status-indicator"></span>
+          <span class="status-text">Checking restaurant hours...</span>
+        </div>
+
+        <!-- Quick Search Bar -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-location-icon"></i>
+          <input type="text" placeholder="Search your favorite Punjabi dish..." id="menuSearchInput">
+          <button class="btn btn-search" id="btnSearch">
+            <i class="fa-solid fa-arrow-right"></i>
+            <span>Search</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Floating Images Side (Vibe matched with Dribbble design) -->
+      <div class="hero-visuals">
+        <!-- Circular layered food displays with shadows -->
+        <div class="food-plate plate-main" style="--delay: 0s;">
+          <img src="assets/paneer_tikka.png" alt="Sizzling Paneer Tikka" class="floating-img">
+        </div>
+        <div class="food-plate plate-secondary" style="--delay: 1.5s;">
+          <img src="assets/dal_fry.png" alt="Rich Punjabi Dal Fry" class="floating-img">
+        </div>
+        <div class="food-plate plate-tertiary" style="--delay: 3s;">
+          <img src="assets/veg_biryani.png" alt="Aromatic Saffron Biryani" class="floating-img">
+        </div>
+        <div class="food-plate plate-fourth" style="--delay: 4.5s;">
+          <img src="assets/garlic_naan.png" alt="Freshly Tandoored Garlic Naan" class="floating-img">
+        </div>
+        <div class="food-plate plate-fifth" style="--delay: 6s;">
+          <img src="assets/mango_lassi.png" alt="Refreshing Mango Lassi" class="floating-img">
+        </div>
+
+        <!-- Decorative Ingredients -->
+        <div class="decorative-item leaf-1" style="--speed: 6s;"><i class="fa-solid fa-leaf text-mint"></i></div>
+        <div class="decorative-item leaf-2" style="--speed: 8s;"><i class="fa-solid fa-pepper-hot text-red"></i></div>
+        <div class="decorative-item leaf-3" style="--speed: 7s;"><i class="fa-solid fa-clover text-green"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-images">
+          <div class="about-img-box img-large">
+            <img src="assets/paneer_tikka.png" alt="Paneer Tikka Platter">
+          </div>
+          <div class="about-img-box img-small">
+            <img src="assets/dal_fry.png" alt="Dal Fry Preparation">
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">A Laid-back Dining Experience in Naranpura</h2>
+          <p>
+            Season 9 offers a streamlined, comfortable dining room where families and friends gather to enjoy traditional Punjabi delicacies. We specialize in rich, slow-cooked lentil dishes, traditional breads direct from the clay tandoor oven, and mouthwatering paneer starters.
+          </p>
+          <p>
+            Understanding the diverse palates of Ahmedabad, we offer custom spice-level personalization and a dedicated menu for <strong>Jain culinary guidelines</strong>. Beyond North Indian, we also serve popular Indo-Chinese starters and comforting soups that our customers love.
+          </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Authentic Tandoor cooking</span>
+            </div>
+            <div class="feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Separate Jain food preparations</span>
+            </div>
+            <div class="feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Dine-In, Takeaway, and Delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Why Season 9?</span>
+        <h2 class="section-title">The Benefits of Dining and Ordering with Us</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon bg-cream">
+            <i class="fa-solid fa-truck-ramp-box"></i>
+          </div>
+          <h3>Easy Online Takeaway</h3>
+          <p>Skip the dining room rush. Select your favorite items online, call to confirm, and pick it up hot and ready within 20 minutes.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon bg-mint">
+            <i class="fa-solid fa-carrot"></i>
+          </div>
+          <h3>100% Pure Veg & Jain Friendly</h3>
+          <p>Strict hygiene standards. Our Jain options are prepared separately using fresh, zero-root ingredients to respect your traditions.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon bg-coral">
+            <i class="fa-solid fa-fire"></i>
+          </div>
+          <h3>Traditional Tandoori Taste</h3>
+          <p>Experience true tandoori flavors made with clean charcoal clay tandoors, delivering that rich smokey taste to every naan and tikka.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Menu Section -->
+  <section class="menu-section" id="menu">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Our Specialties</span>
+        <h2 class="section-title">Explore Our Collection of Tasty Meals</h2>
+        <p class="section-subtitle">Use the buttons below to filter between courses or check Veg/Jain options.</p>
+      </div>
+
+      <!-- Menu Control System -->
+      <div class="menu-controls">
+        <!-- Search within menu -->
+        <div class="menu-search-wrapper">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search menu items (e.g. Biryani)..." id="innerSearchInput">
+        </div>
+
+        <!-- Veg/Jain Toggle Badges -->
+        <div class="dietary-filters">
+          <button class="diet-btn active" data-diet="all">All Dishes</button>
+          <button class="diet-btn" data-diet="veg"><span class="veg-dot dot-green"></span> Pure Veg</button>
+          <button class="diet-btn" data-diet="jain"><span class="veg-dot dot-gold"></span> Jain Options</button>
+        </div>
+
+        <!-- Sticky Swipable Category Bar (Mobile Friendly) -->
+        <div class="category-slider-outer">
+          <div class="category-slider" id="categorySlider">
+            <button class="category-btn active" data-category="all">All Categories</button>
+            <button class="category-btn" data-category="starters">Starters & Soups</button>
+            <button class="category-btn" data-category="mains">Punjabi Main Course</button>
+            <button class="category-btn" data-category="breads">Tandoori Breads</button>
+            <button class="category-btn" data-category="drinks">Desserts & Drinks</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Menu Grid -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- JavaScript will populate items here dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section class="reviews-section" id="reviews">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Reviews</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Join over 1,500 happy diners in Ahmedabad who love our Punjabi flavors.</p>
+      </div>
+      
+      <!-- Review Slider/Carousel -->
+      <div class="reviews-carousel-container">
+        <div class="review-track" id="reviewTrack">
+          <!-- Slide 1 -->
+          <div class="review-card">
+            <div class="review-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+              "I randomly ordered from Season 9, and the experience was simply amazing. The delivery was very timely, even on a rainy afternoon. Still, they managed to prepare and serve a delicious, flavorful Jain meal."
+            </p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">MS</div>
+              <div>
+                <h4 class="reviewer-name">M S</h4>
+                <span class="reviewer-status">Local Guide • 67 Reviews</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="review-card">
+            <div class="review-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="review-text">
+              "Almost every dish was good, specially liked the Dal Fry, Tandoori items, and their unique Mexican Soup. Excellent choice for authentic North Indian Punjabi family dinner in Naranpura."
+            </p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">JB</div>
+              <div>
+                <h4 class="reviewer-name">Jasmeet Bhatia</h4>
+                <span class="reviewer-status">Local Guide • 22 Reviews</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="review-card">
+            <div class="review-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">
+              "The Butter Paneer Masala and Garlic Naan combo is top tier! Best Punjabi dining in this price range. Takeaway packaging is clean and order was ready right on time when I called them."
+            </p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">RK</div>
+              <div>
+                <h4 class="reviewer-name">Rajesh Kumar</h4>
+                <span class="reviewer-status">Verified Customer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="section-container">
+      <div class="contact-grid">
+        <!-- Contact details and Map -->
+        <div class="contact-info">
+          <span class="section-tag">Find Us</span>
+          <h2 class="section-title">Visit or Call Us Today</h2>
+          <p class="contact-description">
+            Conveniently located on 132 Feet Ring Road, opposite Shastrinagar in Naranpura. Stop by for dining or call to place your takeaway orders.
+          </p>
+
+          <div class="contact-details-list">
+            <div class="contact-detail-item">
+              <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="detail-text">
+                <h4>Address</h4>
+                <p>Shivalik Yash, 103, 132 Feet Ring Rd, Opp. Shastrinagar, BRTS Bus Stop, Naranpura, Ahmedabad, Gujarat 380013</p>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="detail-text">
+                <h4>Phone Call</h4>
+                <p><a href="tel:08866108989" class="link-tel">088661 08989</a></p>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="detail-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="detail-text">
+                <h4>Hours</h4>
+                <p>Daily: 11:30 AM – 3:30 PM, 6:30 PM – 11:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Interactive map placeholder (Looks premium & modern) -->
+          <div class="map-container">
+            <div class="map-overlay">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <a href="https://maps.google.com/?q=Season+9+Shivalik+Yash+Ahmedabad" target="_blank" class="btn btn-map">
+                <i class="fa-solid fa-directions"></i> Get Directions
+              </a>
+            </div>
+            <div class="map-skeleton"></div>
+          </div>
+        </div>
+
+        <!-- Table Booking / Inquiry Form -->
+        <div class="contact-form-card">
+          <h3>Pre-Order / Book a Table</h3>
+          <p>Fill out the quick form below, and we will call you back to confirm your booking or takeaway details within 5 minutes.</p>
+          
+          <form id="contactForm" onsubmit="event.preventDefault(); alert('Pre-order received! Our staff will call you shortly to confirm.');">
+            <div class="form-group">
+              <label for="formName">Your Name</label>
+              <input type="text" id="formName" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+              <label for="formPhone">Phone Number</label>
+              <input type="tel" id="formPhone" required placeholder="Enter mobile number">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formService">Order Type</label>
+                <select id="formService">
+                  <option value="takeaway">Takeaway Order</option>
+                  <option value="dinein">Book a Table</option>
+                  <option value="delivery">Delivery Request</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="formTime">Preferred Time</label>
+                <input type="time" id="formTime">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Special Notes (e.g., Jain preparation, extra spicy)</label>
+              <textarea id="formMessage" rows="3" placeholder="Tell us if you want Jain food or have other requests..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit btn-block">Submit Details</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Modal Overlay (Modern and responsive slider) -->
+  <div class="cart-modal-overlay" id="cartModal">
+    <div class="cart-modal">
+      <div class="cart-modal-header">
+        <h3>Your Order Items</h3>
+        <button class="cart-close" id="cartClose">&times;</button>
+      </div>
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Items added dynamically -->
+        <p class="empty-cart-message">Your cart is empty. Add delicious meals from the menu!</p>
+      </div>
+      <div class="cart-modal-footer">
+        <div class="cart-total-row">
+          <span>Subtotal:</span>
+          <span class="cart-total-price" id="cartTotalVal">₹0</span>
+        </div>
+        <p class="cart-instruction-text">Call the restaurant to finalize your order or secure your table with these pre-selected dishes.</p>
+        <a href="tel:08866108989" class="btn btn-submit btn-block text-center">
+          <i class="fa-solid fa-phone"></i> Call to Place Order
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="#" class="logo footer-logo">
+            <i class="fa-solid fa-utensils"></i>
+            <span>Season 9</span>
+          </a>
+          <p>
+            Premium Punjabi & multi-cuisine restaurant serving Ahmedabad since years. We offer hygienic dining, speedy takeaways, and custom catering.
+          </p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="#reviews">Testimonials</a></li>
+            <li><a href="#contact">Location</a></li>
+          </ul>
+        </div>
+        <div class="footer-services">
+          <h4>Our Services</h4>
+          <ul>
+            <li>Traditional Punjabi Main Course</li>
+            <li>Separate Jain Cooking Area</li>
+            <li>Indoor Family Dining Room</li>
+            <li>Fast Takeaway Packing</li>
+            <li>Special Outdoor Event Catering</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Season 9 Restaurant. All rights reserved. Designed for local businesses.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

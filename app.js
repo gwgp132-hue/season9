@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MENU DATA (SEASON 9 SPECIALTIES)
+   MENU DATA (SEASON 9 SPECIALTIES - SIMPLE FRIENDLY LANGUAGE)
    ========================================================================== */
 const menuItems = [
   {
@@ -7,7 +7,7 @@ const menuItems = [
     name: "Tandoori Paneer Tikka",
     category: "starters",
     price: 220,
-    description: "Cottage cheese cubes marinated in rich tandoori spices and yogurt, charred to perfection in clay oven.",
+    description: "Soft cottage cheese cubes grilled with fresh vegetables. Jain option available!",
     diet: "veg",
     jain: true,
     image: "assets/paneer_tikka.png",
@@ -18,7 +18,7 @@ const menuItems = [
     name: "Dal Fry Special",
     category: "mains",
     price: 160,
-    description: "Traditional yellow lentils tempered with ghee, garlic, cumin, onions, tomatoes, and red chilies. Customer favorite!",
+    description: "Popular yellow lentils cooked with butter and mild spices. A customer favorite!",
     diet: "veg",
     jain: true,
     image: "assets/dal_fry.png",
@@ -29,7 +29,7 @@ const menuItems = [
     name: "Garlic Naan",
     category: "breads",
     price: 60,
-    description: "Soft leavened tandoor bread brushed with melted butter and topped with minced garlic and cilantro.",
+    description: "Warm clay-oven bread topped with garlic and fresh butter.",
     diet: "veg",
     jain: false,
     image: "assets/garlic_naan.png",
@@ -40,7 +40,7 @@ const menuItems = [
     name: "Saffron Veg Biryani",
     category: "mains",
     price: 220,
-    description: "Fragrant basmati rice slow-cooked with fresh garden vegetables, paneer, cardamom, and saffron threads.",
+    description: "Aromatic rice cooked with fresh vegetables, spices, and paneer.",
     diet: "veg",
     jain: true,
     image: "assets/veg_biryani.png",
@@ -51,7 +51,7 @@ const menuItems = [
     name: "Mango Lassi",
     category: "drinks",
     price: 90,
-    description: "A thick, refreshing sweet yogurt blend mixed with premium Alphonso mango pulp and topped with nuts.",
+    description: "Creamy mango yogurt drink, served chilled with nuts on top.",
     diet: "veg",
     jain: true,
     image: "assets/mango_lassi.png",
@@ -62,7 +62,7 @@ const menuItems = [
     name: "Veg Lollipop",
     category: "starters",
     price: 180,
-    description: "Crispy fried vegetable balls spiced with Indo-Chinese ginger, garlic, and hot Schezwan glaze.",
+    description: "Crispy veggie balls tossed in a sweet and spicy sauce.",
     diet: "veg",
     jain: false,
     image: "assets/paneer_tikka.png", // fallback visual asset
@@ -73,7 +73,7 @@ const menuItems = [
     name: "Thai Red Curry with Rice",
     category: "mains",
     price: 260,
-    description: "A rich, coconut milk-based red curry loaded with Asian vegetables, bamboo shoots, served with steamed rice.",
+    description: "Mildly sweet coconut curry loaded with fresh vegetables, served with rice.",
     diet: "veg",
     jain: false,
     image: "assets/veg_biryani.png", // fallback visual asset
@@ -84,7 +84,7 @@ const menuItems = [
     name: "Mexican Spicy Soup",
     category: "starters",
     price: 120,
-    description: "A tangy, rich tomato soup spiced with jalapenos, bell peppers, corn kernels, topped with crispy tortilla chips.",
+    description: "Tasty tomato soup with sweet corn, peppers, and crispy tortilla chips.",
     diet: "veg",
     jain: true,
     image: "assets/dal_fry.png", // fallback visual asset
@@ -95,7 +95,7 @@ const menuItems = [
     name: "Butter Paneer Masala",
     category: "mains",
     price: 240,
-    description: "Succulent paneer cubes cooked in a rich, buttery, creamy tomato gravy with sweet spices.",
+    description: "Soft cottage cheese in a sweet, rich, and creamy butter tomato gravy.",
     diet: "veg",
     jain: true,
     image: "assets/paneer_tikka.png", // fallback visual asset
@@ -106,7 +106,7 @@ const menuItems = [
     name: "Laccha Paratha",
     category: "breads",
     price: 50,
-    description: "Crisp layered whole wheat flatbread baked in charcoal clay oven, layered with butter.",
+    description: "Crisp layered wheat bread baked in our clay oven.",
     diet: "veg",
     jain: false,
     image: "assets/garlic_naan.png", // fallback visual asset
@@ -117,7 +117,7 @@ const menuItems = [
     name: "Butter Roti",
     category: "breads",
     price: 30,
-    description: "Traditional whole wheat flour flatbread baked in tandoor and brushed lightly with fresh butter.",
+    description: "Whole wheat flatbread baked in the clay oven with fresh butter.",
     diet: "veg",
     jain: true,
     image: "assets/garlic_naan.png", // fallback visual asset
@@ -128,7 +128,7 @@ const menuItems = [
     name: "Masala Chaas",
     category: "drinks",
     price: 50,
-    description: "Chilled buttermilk blended with roasted cumin powder, mint leaves, and a dash of black salt.",
+    description: "Refreshing spiced buttermilk served cold. Perfect for hot days!",
     diet: "veg",
     jain: true,
     image: "assets/mango_lassi.png", // fallback visual asset
@@ -174,9 +174,6 @@ function updateBusinessStatus() {
   if (!statusContainer) return;
 
   const now = new Date();
-  
-  // Ahmedabad is UTC+5:30. Let's calculate the hours in local time.
-  // The system's local time already handles timezone, so we can check now.getHours() and now.getMinutes().
   const currentHour = now.getHours();
   const currentMinute = now.getMinutes();
   const currentTimeDecimal = currentHour + currentMinute / 60;
@@ -241,14 +238,17 @@ function setupMobileNav() {
     navMenu.classList.toggle("open");
     const isOpen = navMenu.classList.contains("open");
     mobileToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    // Lock body scrolling when mobile menu is open
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
   // Close nav on link click (mobile view)
-  const navLinks = document.querySelectorAll(".nav-link");
+  const navLinks = document.querySelectorAll(".nav-menu .nav-link");
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("open");
       mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      document.body.style.overflow = '';
     });
   });
 
@@ -257,13 +257,14 @@ function setupMobileNav() {
     let current = "";
     const sections = document.querySelectorAll("section");
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - 150;
       if (window.scrollY >= sectionTop) {
         current = section.getAttribute("id");
       }
     });
 
-    navLinks.forEach(link => {
+    const headerLinks = document.querySelectorAll(".nav-link");
+    headerLinks.forEach(link => {
       link.classList.remove("active");
       if (link.getAttribute("href").substring(1) === current) {
         link.classList.add("active");
@@ -283,7 +284,7 @@ function renderMenu(items) {
     menuGrid.innerHTML = `
       <div class="empty-menu-state" style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--color-text-light);">
         <i class="fa-solid fa-face-frown" style="font-size: 2.5rem; margin-bottom: 12px; color: var(--color-primary);"></i>
-        <p>No dishes found matching your criteria. Try another filter or search word!</p>
+        <p>No dishes found. Try a different search word!</p>
       </div>
     `;
     return;
@@ -340,7 +341,6 @@ function setupMenuFilters() {
 
     // 2. Dietary Filter (Veg / Jain)
     if (activeDiet === "veg") {
-      // All items in our data are veg, but some might not have jain versions
       filtered = filtered.filter(item => item.diet === "veg");
     } else if (activeDiet === "jain") {
       filtered = filtered.filter(item => item.jain === true);
@@ -389,7 +389,6 @@ function setupMenuFilters() {
     heroSearchBtn.addEventListener("click", () => {
       searchQuery = heroSearch.value;
       innerSearch.value = searchQuery;
-      // Scroll to menu
       document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
       applyFilters();
     });
@@ -449,22 +448,19 @@ function updateCartCounter() {
   const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
   counter.textContent = totalQty;
 
-  // Add a nice scale animation on count update
   counter.classList.add("bump");
   setTimeout(() => counter.classList.remove("bump"), 300);
 }
 
 function showCartToast(itemName) {
-  // Simple toast alert
   const toast = document.createElement("div");
   toast.className = "cart-toast";
   toast.innerHTML = `
     <i class="fa-solid fa-circle-check text-green"></i>
-    <span>Added ${itemName} to pre-order</span>
+    <span>Added ${itemName} to order</span>
   `;
   document.body.appendChild(toast);
   
-  // Animate toast
   setTimeout(() => toast.classList.add("show"), 10);
   setTimeout(() => {
     toast.classList.remove("show");

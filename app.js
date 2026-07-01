@@ -233,10 +233,12 @@ function handleNavbarScroll() {
 function setupMobileNav() {
   const mobileToggle = document.getElementById("mobileToggle");
   const navMenu = document.getElementById("navMenu");
+  const navbar = document.getElementById("navbar");
 
   mobileToggle.addEventListener("click", () => {
     navMenu.classList.toggle("open");
     const isOpen = navMenu.classList.contains("open");
+    navbar.classList.toggle("menu-open", isOpen);
     mobileToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     // Lock body scrolling when mobile menu is open
     document.body.style.overflow = isOpen ? 'hidden' : '';
@@ -247,6 +249,7 @@ function setupMobileNav() {
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("open");
+      navbar.classList.remove("menu-open");
       mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
       document.body.style.overflow = '';
     });

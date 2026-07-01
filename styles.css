@@ -148,20 +148,6 @@ img {
   box-shadow: 0 10px 25px rgba(255, 94, 126, 0.3);
 }
 
-.btn-phone {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-  padding: 12px 24px;
-  font-size: 0.9rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-phone:hover {
-  background-color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 94, 126, 0.25);
-}
-
 .btn-submit {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -1466,6 +1452,38 @@ img {
 }
 
 /* ==========================================================================
+   GLOBAL FIXED FLOATING ACTIONS
+   ========================================================================== */
+.floating-call-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 14px 24px;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(255, 94, 126, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  z-index: 998; 
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-call-btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255, 94, 126, 0.4);
+}
+
+.floating-call-btn i {
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
    STRICT RESPONSIVE DESIGN (BREAKPOINTS)
    ========================================================================== */
 
@@ -1508,11 +1526,25 @@ img {
 
 /* Strict Mobile Redesign (Full Screen Slide-down Glass Drawer) */
 @media (max-width: 768px) {
+  /* Floating Navbar */
   .navbar {
     top: 16px;
     left: 4%;
     width: 92%;
     border-radius: 40px;
+    height: auto !important; /* Ensure it starts with content height */
+  }
+
+  /* When menu is active, stretch NAVBAR container to full screen to resolve clipping and dimensions */
+  .navbar.menu-open {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    border: none !important;
+    background: linear-gradient(135deg, rgba(255, 240, 243, 0.98) 0%, rgba(238, 246, 252, 0.98) 100%) !important;
+    box-shadow: none !important;
   }
   
   .nav-container {
@@ -1521,19 +1553,16 @@ img {
 
   .mobile-toggle {
     display: flex;
-    z-index: 1001; /* Keep hamburger on top of drawer to allow close click */
+    z-index: 1001; /* Keep above dropdown contents */
   }
 
-  /* Full Screen Glassmorphic cotton candy drawer */
+  /* Full Screen Glassmorphic menu inside full-screen navbar */
   .nav-menu {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(135deg, rgba(255, 240, 243, 0.96) 0%, rgba(238, 246, 252, 0.96) 100%);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1541,10 +1570,14 @@ img {
     gap: 28px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-100%);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(-100px);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
     z-index: 999;
     padding: 100px 20px 40px 20px;
+    background: transparent; 
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
   }
   
   .nav-menu.open {
@@ -1577,17 +1610,6 @@ img {
   .nav-menu .nav-link:nth-child(4) { transition-delay: 0.26s; }
   .nav-menu .nav-link:nth-child(5) { transition-delay: 0.32s; }
   
-  .btn-phone .btn-text {
-    display: none; 
-  }
-  
-  .btn-phone {
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    border-radius: var(--border-radius-round);
-  }
-  
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -1599,6 +1621,13 @@ img {
 @media (max-width: 480px) {
   .section-container {
     padding: 40px 16px;
+  }
+
+  .floating-call-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
   }
   
   /* Prevent search box squeezed look */
